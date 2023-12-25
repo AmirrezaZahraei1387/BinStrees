@@ -29,11 +29,11 @@ public:
     BinSTree& operator =(const BinSTree& binSTree);
     BinSTree& operator =(BinSTree&& binSTree) noexcept;
 
-    bool contain(object& obj) const{
+    bool contain(object&& obj) const{
         return contain(obj, root);
     }
 
-    bool contain(object&& obj) const{
+    bool contain(object& obj) const{
         return contain(obj, root);
     }
 
@@ -54,19 +54,23 @@ public:
     }
 
 
+    void remove(object&& obj){
+        return remove(obj, root);
+    }
+
     void remove(object& obj){
         return remove(obj, root);
     }
 
-    void remove(object&& obj){
-        return remove(obj, root);
+    bool isEmpty(){
+        return root == nullptr;
     }
 
     void makeEmpty(){
         return makeEmpty(root);
     }
-    BinTreeNode<object>* clone(BinSTree<object> root_) const{
-        return clone(root_.root);
+    void clone(BinSTree<object> root_) const{
+        root = clone(root_.root);
     }
 
 private:

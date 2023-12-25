@@ -15,13 +15,11 @@ BinSTree<object>::BinSTree():
 template<typename object>
 BinSTree<object>::BinSTree(BinSTree &root_)
 {
-    std::cout<<"c &"<<std::endl;
     root = clone(root_.root);
 }
 
 template<typename object>
 BinSTree<object>::BinSTree(BinSTree &&root_) noexcept{
-    std::cout<<"c &&"<<std::endl;
     root = root_.root;
     root_.root = nullptr;
 
@@ -29,13 +27,11 @@ BinSTree<object>::BinSTree(BinSTree &&root_) noexcept{
 
 template<typename object>
 BinSTree<object>::~BinSTree() {
-    std::cout<<"d"<<std::endl;
     makeEmpty(root);
 }
 
 template<typename object>
 BinSTree<object>& BinSTree<object>::operator=(const BinSTree<object> &binSTree) {
-    std::cout<<"= &"<<std::endl;
     if(&binSTree == this){
         return *this;
     }
@@ -46,7 +42,6 @@ BinSTree<object>& BinSTree<object>::operator=(const BinSTree<object> &binSTree) 
 
 template<typename object>
 BinSTree<object>& BinSTree<object>::operator=(BinSTree<object> &&binSTree) noexcept{
-    std::cout<<"= &&"<<std::endl;
     if(&binSTree == this){
         return *this;
     }
