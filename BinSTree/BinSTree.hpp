@@ -12,6 +12,7 @@ struct BinTreeNode{
     object element{};
     BinTreeNode* left{};
     BinTreeNode* right{};
+
 };
 
 // object need to overload the comparison operators
@@ -21,8 +22,8 @@ public:
 
 
     BinSTree();
-    explicit BinSTree(BinSTree*& root_);
-    explicit BinSTree(BinSTree*&& root_);
+    BinSTree(BinSTree& root_);
+    BinSTree(BinSTree&& root_) noexcept;
     ~BinSTree();
 
     BinSTree& operator =(const BinSTree& binSTree);
@@ -31,6 +32,11 @@ public:
     bool contain(object& obj) const{
         return contain(obj, root);
     }
+
+    bool contain(object&& obj) const{
+        return contain(obj, root);
+    }
+
     object findMin() const{
         return findMin(root)->element;
     }
@@ -47,9 +53,15 @@ public:
         return insert(obj, root);
     }
 
+
     void remove(object& obj){
         return remove(obj, root);
     }
+
+    void remove(object&& obj){
+        return remove(obj, root);
+    }
+
     void makeEmpty(){
         return makeEmpty(root);
     }
@@ -67,7 +79,7 @@ private:
     // version for move
     void insert(object&& obj, BinTreeNode<object>*& node);
     void remove(object& obj, BinTreeNode<object>* &node);
-    void makeEmpty(BinTreeNode<object>* node);
+    void makeEmpty(BinTreeNode<object>*& node);
     BinTreeNode<object>* clone(BinTreeNode<object>* root_) const;
 
     BinTreeNode<object>* root;
