@@ -79,8 +79,6 @@ public:
 
 
 private:
-
-
     bool contain(object& obj, BinTreeNode<object>* node) const;
     BinTreeNode<object>* findMin(BinTreeNode<object>* node) const;
     BinTreeNode<object>* findMax(BinTreeNode<object>* node) const;

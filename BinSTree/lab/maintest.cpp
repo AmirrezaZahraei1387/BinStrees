@@ -1,6 +1,7 @@
 #include <iostream>
-#include "BinSTree/lab/randomTree.hpp"
-#include "BinSTree/BinSTree.hpp"
+#include "../BinSTree.hpp"
+#include "randomTree.hpp"
+
 
 
 int main() {
