@@ -49,14 +49,14 @@ cmake_ninja_workdir = E$:/Github-Repos/Trees/cmake-build-debug/
 
 build cmake_object_order_depends_target_Trees: phony || CMakeFiles/Trees.dir
 
-build CMakeFiles/Trees.dir/BinSTree/test/test.cpp.obj: CXX_COMPILER__Trees_Debug E$:/Github-Repos/Trees/BinSTree/test/test.cpp || cmake_object_order_depends_target_Trees
-  DEP_FILE = CMakeFiles\Trees.dir\BinSTree\test\test.cpp.obj.d
+build CMakeFiles/Trees.dir/main.cpp.obj: CXX_COMPILER__Trees_Debug E$:/Github-Repos/Trees/main.cpp || cmake_object_order_depends_target_Trees
+  DEP_FILE = CMakeFiles\Trees.dir\main.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\Trees.dir
-  OBJECT_FILE_DIR = CMakeFiles\Trees.dir\BinSTree\test
+  OBJECT_FILE_DIR = CMakeFiles\Trees.dir
 
-build CMakeFiles/Trees.dir/BinSTree/test/testMain.cpp.obj: CXX_COMPILER__Trees_Debug E$:/Github-Repos/Trees/BinSTree/test/testMain.cpp || cmake_object_order_depends_target_Trees
-  DEP_FILE = CMakeFiles\Trees.dir\BinSTree\test\testMain.cpp.obj.d
+build CMakeFiles/Trees.dir/BinSTree/test/test.cpp.obj: CXX_COMPILER__Trees_Debug E$:/Github-Repos/Trees/BinSTree/test/test.cpp || cmake_object_order_depends_target_Trees
+  DEP_FILE = CMakeFiles\Trees.dir\BinSTree\test\test.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\Trees.dir
   OBJECT_FILE_DIR = CMakeFiles\Trees.dir\BinSTree\test
@@ -69,7 +69,7 @@ build CMakeFiles/Trees.dir/BinSTree/test/testMain.cpp.obj: CXX_COMPILER__Trees_D
 #############################################
 # Link the executable Trees.exe
 
-build Trees.exe: CXX_EXECUTABLE_LINKER__Trees_Debug CMakeFiles/Trees.dir/BinSTree/test/test.cpp.obj CMakeFiles/Trees.dir/BinSTree/test/testMain.cpp.obj
+build Trees.exe: CXX_EXECUTABLE_LINKER__Trees_Debug CMakeFiles/Trees.dir/main.cpp.obj CMakeFiles/Trees.dir/BinSTree/test/test.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Trees.dir

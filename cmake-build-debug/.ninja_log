@@ -1,9 +1,17 @@
 # ninja log v5
 4	245	7246575741844287	CMakeFiles/Trees.dir/tree.cpp.obj	81112da254a1fd0
-1	153	7252495390168402	build.ninja	44cac630ddf6ae49
+0	144	7253347890380764	build.ninja	44cac630ddf6ae49
 9	946	7252493326578028	CMakeFiles/Trees.dir/main.cpp.obj	14ff839eaec55342
-667	764	7252494784814518	Trees.exe	9ead2d26e0a0b56a
-3	667	7252494783947014	CMakeFiles/Trees.dir/BinSTree/test/test.cpp.obj	7e0cd0d01fc72903
-0	144	7252495390168402	build.ninja	44cac630ddf6ae49
-2	534	7252495395850568	CMakeFiles/Trees.dir/BinSTree/test/testMain.cpp.obj	a391eedf800fc478
 534	630	7252495396714383	Trees.exe	a3434c536cdfeefc
+3	667	7252494783947014	CMakeFiles/Trees.dir/BinSTree/test/test.cpp.obj	7e0cd0d01fc72903
+2	534	7252495395850568	CMakeFiles/Trees.dir/BinSTree/test/testMain.cpp.obj	a391eedf800fc478
+45	792	7253354784725966	CMakeFiles/Trees.dir/main.cpp.obj	14ff839eaec55342
+41	913	7253354785967692	CMakeFiles/Trees.dir/BinSTree/test/test.cpp.obj	7e0cd0d01fc72903
+914	1038	7253354787020320	Trees.exe	9ead2d26e0a0b56a
+7	587	7253355217191832	CMakeFiles/Trees.dir/main.cpp.obj	14ff839eaec55342
+3	722	7253355218558996	CMakeFiles/Trees.dir/BinSTree/test/test.cpp.obj	7e0cd0d01fc72903
+722	819	7253355219429317	Trees.exe	9ead2d26e0a0b56a
+3	893	7253355493270306	CMakeFiles/Trees.dir/BinSTree/test/test.cpp.obj	7e0cd0d01fc72903
+893	989	7253355494129985	Trees.exe	9ead2d26e0a0b56a
+3	753	7253355748710687	CMakeFiles/Trees.dir/BinSTree/test/test.cpp.obj	7e0cd0d01fc72903
+753	850	7253355749584964	Trees.exe	9ead2d26e0a0b56a

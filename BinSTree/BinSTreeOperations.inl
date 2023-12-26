@@ -95,4 +95,19 @@ BinTreeNode<object> *BinSTree<object>::findMax(BinTreeNode<object> *node) const{
     return node;
 }
 
+template<typename object>
+int BinSTree<object>::getDepth(BinTreeNode<object> *& node) {
+    if(node == nullptr){
+        return 0;
+    }
+
+    int leftDepth  = getDepth(node->left);
+    int rightDepth = getDepth(node->right);
+
+    if(leftDepth > rightDepth){
+        return leftDepth + 1;
+    }
+    return rightDepth + 1;
+}
+
 #endif //TREES_BINSTREEOPERATIONS_INL

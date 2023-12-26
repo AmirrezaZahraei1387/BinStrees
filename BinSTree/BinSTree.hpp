@@ -73,7 +73,13 @@ public:
         root = clone(root_.root);
     }
 
+    int getDepth(){
+        return getDepth(root);
+    }
+
+
 private:
+
 
     bool contain(object& obj, BinTreeNode<object>* node) const;
     BinTreeNode<object>* findMin(BinTreeNode<object>* node) const;
@@ -85,6 +91,7 @@ private:
     void remove(object& obj, BinTreeNode<object>* &node);
     void makeEmpty(BinTreeNode<object>*& node);
     BinTreeNode<object>* clone(BinTreeNode<object>* root_) const;
+    int getDepth(BinTreeNode<object> *& node);
 
     BinTreeNode<object>* root;
 };

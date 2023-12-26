@@ -212,4 +212,18 @@ namespace TestBinSTree{
         return t1.findMin() == 1;
     }
 
+    bool test_getDepth() {
+        std::cout<<"Start testing getDepth function:"<<std::endl;
+
+        std::vector<int> j{8, 10, 3, 1, 6, 4, 7, 14, 13, 16, 20};
+        BinSTree<int> t1;
+
+        for(int  x: j){
+            t1.insert(x);
+        }
+
+        std::cout<<t1.getDepth()<<std::endl;
+        return t1.getDepth() == 5;
+    }
+
 }
