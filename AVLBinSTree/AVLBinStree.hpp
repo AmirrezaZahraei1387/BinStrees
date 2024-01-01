@@ -95,6 +95,9 @@ private:
     AVLNode* findMax(AVLNode* node) const;
     void makeEmpty(AVLNode*& node);
 
+    void printTree(){
+    }
+
     AVLNode* root;
 
 

@@ -32,6 +32,7 @@ void AVLBinSTree<object>::balance(AVLNode *&node) {
     }
 
     node->height = std::max(height(node->left), height(node->right)) + 1;
+    std::cout<<node->element<<' '<<node->height<<std::endl;
 }
 
 template<typename object>
@@ -40,7 +41,7 @@ void AVLBinSTree<object>::rotateWithLeft(AVLNode *&k2) {
     k2->left = k1->right;
     k1->right = k2;
     k2->height = std::max(height(k2->left), height(k2->right)) + 1;
-    k1->height = std::max(height(k1->left), height(k2->right)) + 1;
+    k1->height = std::max(height(k1->left), k2->height) + 1;
     k2 = k1;
 }
 
@@ -50,8 +51,8 @@ void AVLBinSTree<object>::rotateWithRight(AVLNode *&k2) {
     k2->right = k1->left;
     k1->left = k2;
     k2->height = std::max(height(k2->left), height(k2->right)) + 1;
-    k1->height = std::max(height(k2->left), height(k1->right)) + 1;
-    k1 = k2;
+    k1->height = std::max(height(k2->left), k1->height) + 1;
+    k2 = k1;
 }
 
 template<typename object>
