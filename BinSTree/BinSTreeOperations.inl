@@ -6,9 +6,9 @@
 #include "BinSTree.hpp"
 
 template<typename object>
-void BinSTree<object>::insert(object &obj, BinTreeNode<object> *& node) {
+void BinSTree<object>::insert(object &obj, BinTreeNode *& node) {
     if(node == nullptr){
-        node = new BinTreeNode<object>{obj, nullptr, nullptr};
+        node = new BinTreeNode{obj, nullptr, nullptr};
     }else if(obj < node->element){
         insert(obj, node->left);
     }else if(node->element < obj){
@@ -19,10 +19,10 @@ void BinSTree<object>::insert(object &obj, BinTreeNode<object> *& node) {
 }
 
 template<typename object>
-void BinSTree<object>::insert(object &&obj, BinTreeNode<object> *& node) {
+void BinSTree<object>::insert(object &&obj, BinTreeNode *& node) {
 
     if(node == nullptr){
-        node = new BinTreeNode<object>{std::move(obj), nullptr, nullptr};
+        node = new BinTreeNode{std::move(obj), nullptr, nullptr};
     }else if(obj < node->element){
         insert(std::move(obj), node->left);
     }else if(node->element < obj){
@@ -33,7 +33,7 @@ void BinSTree<object>::insert(object &&obj, BinTreeNode<object> *& node) {
 }
 
 template<typename object>
-void BinSTree<object>::remove(object &obj, BinTreeNode<object> *&node) {
+void BinSTree<object>::remove(object &obj, BinTreeNode *&node) {
     if(node == nullptr) // we can not remove the nullptr
         return;
 
@@ -47,14 +47,14 @@ void BinSTree<object>::remove(object &obj, BinTreeNode<object> *&node) {
         node->element = findMin(node->right)->element;
         remove(node->element, node->right);
     }else{
-        BinTreeNode<object>* oldNode{node};
+        BinTreeNode* oldNode{node};
         node = (node -> left != nullptr)? node->left: node->right;
         delete oldNode;
     }
 }
 
 template<typename object>
-bool BinSTree<object>::contain(object& obj, BinTreeNode<object> *node) const{
+bool BinSTree<object>::contain(object& obj, BinTreeNode *node) const{
     auto& currentNode{node};
     while(true){
         if (currentNode == nullptr) {
@@ -73,7 +73,7 @@ bool BinSTree<object>::contain(object& obj, BinTreeNode<object> *node) const{
 }
 
 template<typename object>
-BinTreeNode<object> *BinSTree<object>::findMin(BinTreeNode<object>* node) const {
+typename BinSTree<object>::BinTreeNode *BinSTree<object>::findMin(BinTreeNode* node) const {
     if(node != nullptr){
 
         while(node->left != nullptr) {
@@ -84,7 +84,7 @@ BinTreeNode<object> *BinSTree<object>::findMin(BinTreeNode<object>* node) const 
 }
 
 template<typename object>
-BinTreeNode<object> *BinSTree<object>::findMax(BinTreeNode<object> *node) const{
+typename BinSTree<object>::BinTreeNode *BinSTree<object>::findMax(BinTreeNode *node) const{
     if(node != nullptr){
 
         while(node->right != nullptr) {
@@ -96,7 +96,7 @@ BinTreeNode<object> *BinSTree<object>::findMax(BinTreeNode<object> *node) const{
 }
 
 template<typename object>
-int BinSTree<object>::getDepth(BinTreeNode<object> *& node) {
+int BinSTree<object>::getDepth(BinTreeNode *& node) {
     if(node == nullptr){
         return 0;
     }

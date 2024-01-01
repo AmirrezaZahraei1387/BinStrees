@@ -1,0 +1,7 @@
+//
+// Created by KAVOSH on 1/1/2024.
+//
+#ifndef TREES_AVLPROPERTY_INL
+#define TREES_AVLPROPERTY_INL
+
+#endif //TREES_AVLPROPERTY_INL

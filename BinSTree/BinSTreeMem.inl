@@ -52,7 +52,7 @@ BinSTree<object>& BinSTree<object>::operator=(BinSTree<object> &&binSTree) noexc
 }
 
 template<typename object>
-void BinSTree<object>::makeEmpty(BinTreeNode<object> *& node) {
+void BinSTree<object>::makeEmpty(BinTreeNode*& node) {
     if (node == nullptr){return;}
     makeEmpty(node->left);
     makeEmpty(node->right);
@@ -63,11 +63,11 @@ void BinSTree<object>::makeEmpty(BinTreeNode<object> *& node) {
 }
 
 template<typename object>
-BinTreeNode<object>* BinSTree<object>::clone(BinTreeNode<object> *root_) const{
+typename BinSTree<object>::BinTreeNode* BinSTree<object>::clone(BinTreeNode *root_) const{
     if(root_ == nullptr)
         return nullptr;
     else
-        return new BinTreeNode<object>{root_->element, clone(root_->left), clone(root_->right)};
+        return new BinTreeNode{root_->element, clone(root_->left), clone(root_->right)};
 
 }
 #endif //TREES_BINSTREEMEM_INL

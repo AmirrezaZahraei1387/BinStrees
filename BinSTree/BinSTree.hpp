@@ -7,13 +7,7 @@
 #include <memory>
 
 
-template <typename object>
-struct BinTreeNode{
-    object element{};
-    BinTreeNode* left{};
-    BinTreeNode* right{};
 
-};
 
 // object need to overload the comparison operators
 template<typename object>
@@ -50,16 +44,16 @@ public:
     }
 
     void insert(object&& obj){
-        return insert(obj, root);
+        insert(obj, root);
     }
 
 
     void remove(object&& obj){
-        return remove(obj, root);
+        remove(obj, root);
     }
 
     void remove(object& obj){
-        return remove(obj, root);
+        remove(obj, root);
     }
 
     bool isEmpty(){
@@ -67,7 +61,7 @@ public:
     }
 
     void makeEmpty(){
-        return makeEmpty(root);
+        makeEmpty(root);
     }
     void clone(BinSTree<object> root_) const{
         root = clone(root_.root);
@@ -79,19 +73,26 @@ public:
 
 
 private:
-    bool contain(object& obj, BinTreeNode<object>* node) const;
-    BinTreeNode<object>* findMin(BinTreeNode<object>* node) const;
-    BinTreeNode<object>* findMax(BinTreeNode<object>* node) const;
-    // version for copy
-    void insert(object& obj, BinTreeNode<object>*& node);
-    // version for move
-    void insert(object&& obj, BinTreeNode<object>*& node);
-    void remove(object& obj, BinTreeNode<object>* &node);
-    void makeEmpty(BinTreeNode<object>*& node);
-    BinTreeNode<object>* clone(BinTreeNode<object>* root_) const;
-    int getDepth(BinTreeNode<object> *& node);
 
-    BinTreeNode<object>* root;
+    struct BinTreeNode{
+        object element{};
+        BinTreeNode* left{};
+        BinTreeNode* right{};
+    };
+
+    bool contain(object& obj, BinTreeNode* node) const;
+    BinTreeNode* findMin(BinTreeNode* node) const;
+    BinTreeNode* findMax(BinTreeNode* node) const;
+    // version for copy
+    void insert(object& obj, BinTreeNode*& node);
+    // version for move
+    void insert(object&& obj, BinTreeNode*& node);
+    void remove(object& obj, BinTreeNode* &node);
+    void makeEmpty(BinTreeNode*& node);
+    BinTreeNode* clone(BinTreeNode* root_) const;
+    int getDepth(BinTreeNode *& node);
+
+    BinTreeNode* root;
 };
 
 #include "BinSTreeMem.inl"
