@@ -7,7 +7,8 @@
 #include <random>
 #include "../BinSTree.hpp"
 
-void randomIntT(BinSTree<int>& tree, int nodeN, int min, int max){
+template<typename tree_>
+void randomIntT(tree_& tree, int nodeN, int min, int max){
 
     int r{0};
 
@@ -20,7 +21,8 @@ void randomIntT(BinSTree<int>& tree, int nodeN, int min, int max){
     }
 }
 
-void randomInsertRemove(BinSTree<int>& tree, int pN, int min, int max){
+template<typename tree_>
+void randomInsertRemove(tree_& tree, int pN, int min, int max){
     int r{0};
 
     std::random_device rd;

@@ -7,9 +7,9 @@
 int main() {
     BinSTree<int> tree;
 
-    randomIntT(tree, 1'000'000, 0, 1'000);
+    randomIntT<BinSTree<int>>(tree, 1'000'000, 0, 1'000);
     std::cout<<"depth before random insertion deletion pairs: "<<tree.getDepth()<<std::endl;
-    randomInsertRemove(tree, 1'000'000, 0, 1'000'000);
+    randomInsertRemove<BinSTree<int>>(tree, 1'000'000, 0, 1'000'000);
     std::cout<<"depth after random insertion deletion pairs: "<<tree.getDepth()<<std::endl;
     return 0;
 }
