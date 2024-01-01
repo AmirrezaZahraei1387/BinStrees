@@ -4,8 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <functional>
-#include "AVLBinSTree/test/AVLBinSTreeTest.hpp"
-
+#include "AVLBinSTreeTest.hpp"
 
 
 int main() {

@@ -32,7 +32,6 @@ void AVLBinSTree<object>::balance(AVLNode *&node) {
     }
 
     node->height = std::max(height(node->left), height(node->right)) + 1;
-    std::cout<<node->element<<' '<<node->height<<std::endl;
 }
 
 template<typename object>

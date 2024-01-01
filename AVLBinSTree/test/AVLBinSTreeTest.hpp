@@ -1,11 +1,12 @@
 //
-// Created by KAVOSH on 12/25/2023.
+// Created by KAVOSH on 1/1/2024.
 //
-#ifndef TREES_TEST_HPP
-#define TREES_TEST_HPP
+#ifndef TREES_AVLBINSTREETEST_HPP
+#define TREES_AVLBINSTREETEST_HPP
 #include <functional>
 
-namespace TestBinSTree{
+
+namespace AVLBinSTreeTest{
     void printResult(bool t);
 
     bool test_copy_constr();
@@ -28,7 +29,6 @@ namespace TestBinSTree{
 
     bool test_findMin();
 
-    bool test_getDepth();
 
     const std::vector<std::function<bool()>> testFuncs{test_contain,
                                                        test_insert,
@@ -39,8 +39,6 @@ namespace TestBinSTree{
                                                        test_makeEmpty,
                                                        test_copy_assign,
                                                        test_move_assign,
-                                                       test_copy_constr,
-                                                       test_getDepth};
+                                                       test_copy_constr,};
 }
-
-#endif //TREES_TEST_HPP
+#endif //TREES_AVLBINSTREETEST_HPP
