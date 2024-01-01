@@ -1,14 +1,13 @@
 #include <iostream>
-#include "BinSTree/lab/randomTree.hpp"
-#include "BinSTree/BinSTree.hpp"
+#include "AVLBinSTree/AVLBinStree.hpp"
 
 
 int main() {
-    BinSTree<int> tree;
 
-    randomIntT(tree, 1'000'000, 0, 1'000);
-    std::cout<<"depth before random insertion deletion pairs: "<<tree.getDepth()<<std::endl;
-    randomInsertRemove(tree, 1'000'000, 0, 1'000'000);
-    std::cout<<"depth after random insertion deletion pairs: "<<tree.getDepth()<<std::endl;
+    int i{8};
+    std::cout<<'h'<<std::endl;
+    AVLBinSTree<int> tree;
+    tree.insert(i);
+    std::cout<<tree.contain(i);
     return 0;
 }

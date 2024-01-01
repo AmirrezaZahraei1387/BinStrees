@@ -3,4 +3,8 @@ project(Trees)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(Trees main.cpp BinSTree/BinSTree.hpp BinSTree/BinSTreeOperations.inl BinSTree/BinSTreeMem.inl BinSTree/test/test.hpp BinSTree/test/test.cpp BinSTree/lab/randomTree.hpp AVLBinSTree/AVLBinStree.hpp AVLBinSTree/AVLProperty.inl)
+add_executable(Trees main.cpp AVLBinSTree/AVLBinStree.hpp
+        AVLBinSTree/AVLProperty.inl
+        AVLBinSTree/AVLBinSTreeOperations.inl
+        AVLBinSTree/AVLMem.inl
+        )

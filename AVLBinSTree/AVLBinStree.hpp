@@ -9,13 +9,69 @@ template<typename object>
 class AVLBinSTree{
 public:
 
+    AVLBinSTree();
+    AVLBinSTree(AVLBinSTree& root_);
+    AVLBinSTree(AVLBinSTree&& root_) noexcept;
+    ~AVLBinSTree();
+
+    AVLBinSTree& operator =(const AVLBinSTree& binSTree);
+    AVLBinSTree& operator =(AVLBinSTree&& binSTree) noexcept;
+
+    bool contain(object&& obj) const{
+        return contain(obj, root);
+    }
+
+    bool contain(object& obj) const{
+        return contain(obj, root);
+    }
+
+    object findMin() const{
+        return findMin(root)->element;
+    }
+
+    object findMax() const{
+        return findMax(root)->element;
+    }
+
+    void insert(object& obj){
+        return insert(obj, root);
+    }
+
+    void insert(object&& obj){
+        insert(obj, root);
+    }
+
+
+    void remove(object&& obj){
+        remove(obj, root);
+    }
+
+    void remove(object& obj){
+        remove(obj, root);
+    }
+
+    bool isEmpty(){
+        return root == nullptr;
+    }
+
+    void makeEmpty(){
+        makeEmpty(root);
+    }
+    void clone(AVLBinSTree<object> root_) const{
+        root = clone(root_.root);
+    }
+
+    int getHeight(){
+        return height(root);
+    }
+
 
 private:
     struct AVLNode{
-        int height{};
+        object element;
         AVLNode* left;
         AVLNode* right;
-        object element;
+        int height{};
     };
 
     static constexpr int ALLOWED_IMBALANCE = 1;
@@ -38,7 +94,14 @@ private:
     AVLNode* findMin(AVLNode* node) const;
     AVLNode* findMax(AVLNode* node) const;
     void makeEmpty(AVLNode*& node);
-    int getDepth(AVLNode *& node);
+
+    AVLNode* root;
+
+
 };
 
+
+#include "AVLProperty.inl"
+#include "AVLMem.inl"
+#include "AVLBinSTreeOperations.inl"
 #endif //TREES_AVLBINSTREE_HPP
